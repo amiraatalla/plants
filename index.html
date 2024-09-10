@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link rel="stylesheet" href="./assets/css/style.css">
+    <title>Plant Manager</title>
+    
+</head>
+
+<body>
+    <header>
+        <h1 id="headerTitle">Plant Manager</h1>
+        <div class="lang-toggle" onclick="toggleLanguage()">Switch to Arabic - التبديل إلى العربية</div>
+    </header>
+    <main>
+        <!-- صفحة الإدخال الرئيسية -->
+        <div id="homePage" class="page">
+            <h2 id="homeWelcome">Welcome to Plant Manager</h2>
+            <form id="plantNameForm">
+                <label for="plantName" id="plantNameLabel">Enter Plant Name:</label>
+                <input type="text" id="plantName" name="plantName" required>
+                <button type="submit" id="submitButton">Submit</button>
+            </form>
+        </div>
+
+        <!-- صفحة خيارات النبات -->
+        <div id="plantOptionsPage" class="page hidden">
+            <h2 id="plantOptionsTitle">Choose an Option for <span id="currentPlantName"></span></h2>
+            <div class="nav-buttons">
+                <a href="#" onclick="showPage('plantingPage'); return false;" id="plantingInstructionsButton">Planting
+                    Instructions & Schedule</a>
+                <a href="#" onclick="showPage('diseasePage'); return false;" id="diseaseInfoButton">Plant Disease
+                    Information</a>
+                <a href="#" onclick="showPage('homePage'); return false;" id="backToHomeButton">Back to Home</a>
+            </div>
+        </div>
+
+        <!-- صفحة إرشادات الزراعة -->
+        <div id="plantingPage" class="page hidden">
+            <h2 id="plantingPageTitle">Planting Instructions & Schedule</h2>
+            <form id="plantingForm">
+                <label for="plantingDate" id="plantingDateLabel">Planting Date:</label>
+                <input type="date" id="plantingDate" name="plantingDate" required>
+
+                <label for="careInstructions" id="careInstructionsLabel">Care Instructions:</label>
+                <textarea id="careInstructions" name="careInstructions" rows="4"></textarea>
+
+                <label for="tips" id="tipsLabel">Tips:</label>
+                <textarea id="tips" name="tips" rows="4"></textarea>
+
+                <label for="harvestDate" id="harvestDateLabel">Harvest Date:</label>
+                <input type="date" id="harvestDate" name="harvestDate">
+
+                <button type="submit" id="submitScheduleButton">Submit Schedule</button>
+            </form>
+            <div class="nav-buttons">
+                <a href="#" onclick="showPage('homePage'); return false;" id="backToHomePlantingButton">Back to Home</a>
+            </div>
+        </div>
+
+        <!-- صفحة معلومات الأمراض -->
+        <div id="diseasePage" class="page hidden">
+            <h2 id="diseasePageTitle">Plant Disease Information</h2>
+            <form id="diseaseForm">
+                <label for="diseaseDescription" id="diseaseDescriptionLabel">Disease Description:</label>
+                <input type="text" id="diseaseDescription" name="diseaseDescription">
+
+                <label for="diseaseSymptoms" id="diseaseSymptomsLabel">Disease Symptoms:</label>
+                <input type="text" id="diseaseSymptoms" name="diseaseSymptoms">
+
+                <label for="diseaseDiscoveryDate" id="diseaseDiscoveryDateLabel">Disease Discovery Date:</label>
+                <input type="date" id="diseaseDiscoveryDate" name="diseaseDiscoveryDate">
+
+                <button type="submit" id="submitDiseaseInfoButton">Submit Disease Info</button>
+            </form>
+            <div class="nav-buttons">
+                <a href="#" onclick="showPage('resistancePage'); return false;" id="goToResistanceButton">Go to Disease
+                    Resistance</a>
+                <a href="#" onclick="showPage('plantOptionsPage'); return false;" id="backToOptionsButton">Back to
+                    Options</a>
+            </div>
+        </div>
+
+        <!-- صفحة مقاومة الأمراض -->
+        <div id="resistancePage" class="page hidden">
+            <h2 id="resistancePageTitle">Plant Disease Resistance</h2>
+            <form id="resistanceForm">
+                <label for="resistanceMeasures" id="resistanceMeasuresLabel">Resistance Measures:</label>
+                <textarea id="resistanceMeasures" name="resistanceMeasures" rows="4"></textarea>
+
+                <label for="preventionTips" id="preventionTipsLabel">Prevention Tips:</label>
+                <textarea id="preventionTips" name="preventionTips" rows="4"></textarea>
+
+                <button type="submit" id="submitResistanceInfoButton">Submit Resistance Info</button>
+            </form>
+            <div class="nav-buttons">
+                <a href="#" onclick="showPage('homePage'); return false;" id="backToHomeResistanceButton">Back to
+                    Home</a>
+            </div>
+        </div>
+    </main>
+
+    <script src="./assets/js/main.js"></script>
+</body>
+
+</html>
